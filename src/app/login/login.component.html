@@ -1,5 +1,5 @@
-<div class="wrapper fadeInDown" style="margin-top: 100px;">
-    <div id="formContent">
+    <div class="wrapper fadeInDown" style="margin-top: 100px;">
+        <div id="formContent">
       <!-- Tabs Titles -->
   
       <!-- Icon -->
@@ -8,7 +8,7 @@
       </div>
   
       <!-- Login Form -->
-      <form>
+      <form #ref="ngForm"  (ngSubmit)="submitLoginForm(ref)">
 
 
 
@@ -18,14 +18,14 @@
        
           
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="rd1" value="admin">
+            <input class="form-check-input" type="radio" name="role" id="rd1" value="admin" ngModel>
             <label class="form-check-label" for="rd1">
                     Admin
                 </label>
           </div>  
 
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="rd2" value="faculty">
+            <input class="form-check-input" type="radio" name="role" id="rd2" value="faculty" ngModel>
             <label class="form-check-label" for="rd2">
                     Faculty
                 </label>
@@ -33,7 +33,7 @@
 
 
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="rd3" value="student">
+            <input class="form-check-input" type="radio" name="role" id="rd3" value="student" ngModel>
             <label class="form-check-label" for="rd3">
                     Student
                 </label>
@@ -46,8 +46,8 @@
 
 
 
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="text" id="login" class="fadeIn second" name="username" placeholder="username" ngModel>
+        <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
   

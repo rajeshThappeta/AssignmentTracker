@@ -1,0 +1,32 @@
+@media (min-width: 576px) {
+    .rounded-nav {
+      border-radius: 50rem !important;
+    }
+  }
+  
+  @media (min-width: 576px) {
+    .rounded-nav .nav-link {
+      border-radius: 50rem !important;
+    }
+  }
+
+
+
+
+  a.active.nav-link{background-color: #17a2b8!important;}
+
+
+  .nav-pills .pill1 .nav-link:not(.active) {
+    background-color:powderblue;
+    color: white;
+}
+
+.nav-pills .pill2 .nav-link:not(.active) {
+    background-color:powderblue;
+    color: white;
+}
+
+.nav-pills .pill3 .nav-link:not(.active) {
+    background-color:powderblue;
+    color: white;
+}

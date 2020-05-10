@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [AdmindashboardComponent],
   imports: [
     CommonModule,
     AdminRoutingModule
