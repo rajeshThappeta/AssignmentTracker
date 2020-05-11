@@ -4,10 +4,15 @@ import{FormsModule} from '@angular/forms'
 import { FacultyRoutingModule } from './faculty-routing.module';
 import { FacultydashboardComponent } from './facultydashboard/facultydashboard.component';
 import { AddsubjectComponent } from './addsubject/addsubject.component';
+import { ViewassignmentsComponent } from './viewassignments/viewassignments.component';
+import { CreateassignmentsComponent } from './createassignments/createassignments.component';
+import { ReadSubjectsTopicsComponent } from './read-subjects-topics/read-subjects-topics.component';
+import { ReadBatchesComponent } from './read-batches/read-batches.component';
+import { CreateSubjectTopicComponent } from './create-subject-topic/create-subject-topic.component';
 
 
 @NgModule({
-  declarations: [FacultydashboardComponent, AddsubjectComponent],
+  declarations: [FacultydashboardComponent, AddsubjectComponent, ViewassignmentsComponent, CreateassignmentsComponent, ReadSubjectsTopicsComponent, ReadBatchesComponent, CreateSubjectTopicComponent],
   imports: [
     CommonModule,
     FacultyRoutingModule,

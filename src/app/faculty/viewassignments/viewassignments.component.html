@@ -1,0 +1,39 @@
+<div class="container">
+    <!-- to select subjects-->
+    <div class="row">
+        <div class=" col-md-12">
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="gender3">Select Subject</label>
+            </div>
+            <select class="custom-select" id="gender3" (input)="getSelectedSubject(refsub.value)" #refsub ngModel>
+              <option selected>Choose...</option>
+             <option *ngFor="let subject of subjects" [value]=subject?.subjectName  >{{subject?.subjectName}}</option>
+            </select>
+          </div>
+          
+        
+        </div>
+    </div>
+
+<!--to select topics-->
+    <div class="row">
+        <div class=" col-md-12">
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="gender3">Select Topic</label>
+            </div>
+            <select class="custom-select" id="gender3" (input)="getSelectedTopic(reftopic.value)" #reftopic ngModel>
+              <option selected>Choose...</option>
+             <option *ngFor="let subjectedTopic of selectedTopics" [value]=subjectedTopic?.topicName  >{{subjectedTopic?.topicName}}</option>
+            </select>
+          </div>
+          
+        
+        </div>
+    </div>
+  </div>
+  
+  
