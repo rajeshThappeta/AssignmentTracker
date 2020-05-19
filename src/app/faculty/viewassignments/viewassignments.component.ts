@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReadsubjectsService } from '../readsubjects.service';
+import { CreateOrReadBatchesService } from '../create-or-read-batches.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-viewassignments',
@@ -10,11 +12,17 @@ export class ViewassignmentsComponent implements OnInit {
 
   subjects:object[]=[];
   selectedTopics:object[]=[];
-  constructor(private readSubService:ReadsubjectsService) { }
+  assignmentsFromSelectedTopic:string[]=[];
+  batches:string[]=[];
+  constructor(private readSubService:ReadsubjectsService,private createOrReadService:CreateOrReadBatchesService,private router:Router) { }
 
   ngOnInit(): void {
     this.subjects=this.readSubService.readSubjects();
+    this.batches=this.createOrReadService.getbatches();
   }
+
+
+  //choose subject
   getSelectedSubject(selectedSubject){
     console.log(selectedSubject);
     this.subjects.forEach((subject)=>{
@@ -25,7 +33,33 @@ export class ViewassignmentsComponent implements OnInit {
     console.log(this.selectedTopics)
   }
 
-  getSelectedTopic(selectedTopic){
 
+  //choose topic
+  getSelectedTopic(selectedTopicFromForm){
+    console.log("selectedTopicFromForm",selectedTopicFromForm);
+    console.log("selected topics",this.selectedTopics)
+   
+
+    this.selectedTopics.forEach((selectedTopic)=>{
+      console.log(selectedTopicFromForm,"    ",selectedTopic["topicName"],"    ",selectedTopic["assignments"])
+      if(selectedTopicFromForm==selectedTopic["topicName"]){
+        this.assignmentsFromSelectedTopic=selectedTopic["assignments"];
+        console.log(this.assignmentsFromSelectedTopic)
+      }
+      
+    })
   }
+
+
+  assigned:boolean=false;
+  //assign to students
+  assignToStudent(assignment){
+    this.assigned=true;
+    console.log(assignment);
+  }
+
+
+   gotoViewAssignmentsComponents(){
+    this.router.navigateByUrl("/facultydashboard/assignmentstatus");
+   }
 }

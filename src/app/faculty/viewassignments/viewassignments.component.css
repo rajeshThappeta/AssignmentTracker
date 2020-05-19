@@ -17,3 +17,12 @@ body {
 }
 
 
+.input-group>.input-group-prepend {
+    flex: 0 0 15%;
+    
+}
+.input-group .input-group-text {
+    width: 100%;
+    background-color:rgb(90, 200, 200);
+    color:black;
+}

@@ -9,10 +9,11 @@ import { CreateassignmentsComponent } from './createassignments/createassignment
 import { ReadSubjectsTopicsComponent } from './read-subjects-topics/read-subjects-topics.component';
 import { ReadBatchesComponent } from './read-batches/read-batches.component';
 import { CreateSubjectTopicComponent } from './create-subject-topic/create-subject-topic.component';
+import { AssignmentstatusComponent } from './assignmentstatus/assignmentstatus.component';
 
 
 @NgModule({
-  declarations: [FacultydashboardComponent, AddsubjectComponent, ViewassignmentsComponent, CreateassignmentsComponent, ReadSubjectsTopicsComponent, ReadBatchesComponent, CreateSubjectTopicComponent],
+  declarations: [FacultydashboardComponent, AddsubjectComponent, ViewassignmentsComponent, CreateassignmentsComponent, ReadSubjectsTopicsComponent, ReadBatchesComponent, CreateSubjectTopicComponent, AssignmentstatusComponent],
   imports: [
     CommonModule,
     FacultyRoutingModule,

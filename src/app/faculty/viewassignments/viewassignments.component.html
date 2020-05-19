@@ -4,7 +4,7 @@
         <div class=" col-md-12">
           
           <div class="input-group mb-3">
-            <div class="input-group-prepend">
+            <div class="input-group-prepend ">
               <label class="input-group-text" for="gender3">Select Subject</label>
             </div>
             <select class="custom-select" id="gender3" (input)="getSelectedSubject(refsub.value)" #refsub ngModel>
@@ -34,6 +34,62 @@
         
         </div>
     </div>
+
+<!-- to view and assign assignments-->
+
+<!-- <div class="row">
+  <div class=" col-md-12">
+    
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="gender3">Select Assignment</label>
+        
+      </div>
+      <ul class="custom-select" id="gender3" (input)="assignToStudent(reftopic.value)" #reftopic ngModel>
+        <option selected>Choose...</option>
+       <li *ngFor="let selectedAssignment of assignmentsFromSelectedTopic" [value]=selectedAssignment  >{{selectedAssignment}}</li>
+      </ul>
+    </div>
+    
+  
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+<div class="panel-body">
+  <ul class="list-group" *ngFor='let selectedAssignment of assignmentsFromSelectedTopic'>
+      <li class="list-group-item">
+         
+            
+              <label >
+                {{selectedAssignment}}
+              </label>
+         
+          <div class="pull-right action-buttons">
+            <label for="">BatchNo</label>
+            <select class="custom-select" style="width:80px;"name="batchName" id="">
+              <option [value]=batch *ngFor="let batch of batches">{{batch}}</option>
+            </select>
+           <button class="btn btn-warning ml-2" (click)="assignToStudent(selectedAssignment)">Assign</button>
+              <a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a href="http://www.jquery2dotnet.com" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+              <a href="http://www.jquery2dotnet.com" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+          </div>
+      </li>
+    
+      </ul>
+
+      <div class="text-center" *ngIf="assigned">
+        <button class="btn btn-success" (click)="gotoViewAssignmentsComponents()">Done</button>
+      </div>
+     
   </div>
   
   

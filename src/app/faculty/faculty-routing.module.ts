@@ -4,13 +4,15 @@ import { FacultydashboardComponent } from './facultydashboard/facultydashboard.c
 import { AddsubjectComponent } from './addsubject/addsubject.component';
 import { ViewassignmentsComponent } from './viewassignments/viewassignments.component';
 import { CreateassignmentsComponent } from './createassignments/createassignments.component';
+import { AssignmentstatusComponent } from './assignmentstatus/assignmentstatus.component';
 
 
 const routes: Routes = [
   {path:"facultydashboard",component:FacultydashboardComponent,
     children:[
               {path:"viewassignments",component:ViewassignmentsComponent},
-              {path:"createassignment",component:CreateassignmentsComponent}
+              {path:"createassignment",component:CreateassignmentsComponent},
+              {path:"assignmentstatus",component:AssignmentstatusComponent}
             ]}
 ];
 

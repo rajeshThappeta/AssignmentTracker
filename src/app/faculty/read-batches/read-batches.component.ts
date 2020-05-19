@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CreateOrReadBatchesService } from '../create-or-read-batches.service';
 
 @Component({
   selector: 'app-read-batches',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadBatchesComponent implements OnInit {
 
-  constructor() { }
+
+  batches:string[]=[];
+  constructor(private readBatches:CreateOrReadBatchesService) { }
 
   ngOnInit(): void {
+    this.batches=this.readBatches.getbatches();
   }
 
 }
